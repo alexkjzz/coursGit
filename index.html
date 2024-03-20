@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333; /* Couleur de fond sombre */
+            color: #fff; /* Couleur du texte clair */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #444; /* Couleur de fond plus foncée */
+            border-radius: 10px;
+            padding: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre initiale */
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            transition: box-shadow 0.3s ease; /* Transition de l'ombre */
+        }
+
+        .section:hover {
+            box-shadow: 0 0 20px rgba(189, 189, 189, 0.7); /* Ombre au survol */
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: slideInTitle 1s ease forwards, fadeIn 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .info, .photos, .category {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre initiale */
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            transition: box-shadow 0.3s ease; /* Transition de l'ombre */
+        }
+
+        .info:hover, .photos:hover, .category:hover {
+            box-shadow: 0 0 20px rgba(189, 189, 189, 0.7); /* Ombre au survol */
+        }
+
+        .photos img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .photos img:hover {
+            transform: scale(1.1);
+        }
+
+        .category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category ul li {
+            margin-bottom: 5px;
+            color: #ccc; /* Couleur du texte plus clair */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInTitle {
+            from {
+                transform: translateY(-20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <title>CV Git</title>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Mon CV Git</h1>
+        </div>
+        <div class="info section" style="animation-delay: 1s;">
+            <h2>Informations personnelles</h2>
+            <p><strong>Nom:</strong> LAMONNIER Alexis </p>
+            <p><strong>Poste:</strong> Etudiant </p>
+            <p><strong>Expérience:</strong> 1 an </p>
+            <p><strong>Compétences:</strong> HTML, CSS, JavaScript, PHP, Python, Git</p>
+            <p><strong>Contact:</strong> alexis.lamonnier@gmail.com</p>
+        </div>
+        <div class="photos section" style="animation-delay: 1.5s;">
+            <h2>Photos</h2>
+            <img src="photo1.jpg" alt="Photo 1">
+            <img src="photo2.jpg" alt="Photo 2">
+            <img src="photo3.jpg" alt="Photo 3">
+        </div>
+        <div class="category section" style="animation-delay: 2s;">
+            <h2>Passions</h2>
+            <ul>
+                <li>Informatique</li>
+                <li>Voyages</li>
+                <li>Sport</li>
+                <li>Milieu Militaire</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
