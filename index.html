@@ -50,41 +50,14 @@
             animation-delay: 0.5s;
         }
 
-        .info, .photos, .category {
-            flex: 1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre initiale */
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            transition: box-shadow 0.3s ease; /* Transition de l'ombre */
-        }
-
-        .info:hover, .photos:hover, .category:hover {
-            box-shadow: 0 0 20px rgba(189, 189, 189, 0.7); /* Ombre au survol */
-        }
-
-        .photos img {
-            width: 150px;
-            height: auto;
-            margin: 10px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        .photos img:hover {
-            transform: scale(1.1);
-        }
-
-        .category ul {
+        ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .category ul li {
-            margin-bottom: 5px;
-            color: #ccc; /* Couleur du texte plus clair */
+        li {
+            margin-bottom: 10px;
         }
 
         @media (max-width: 768px) {
@@ -117,31 +90,60 @@
 </head>
 <body>
     <div class="container">
+        <h1>Mon CV Git</h1>
         <div class="section">
-            <h1>Mon CV Git</h1>
+            <h2>Profil personnel</h2>
+            <p>Je suis un développeur passionné avec une expertise dans les technologies web modernes.</p>
         </div>
-        <div class="info section" style="animation-delay: 1s;">
-            <h2>Informations personnelles</h2>
-            <p><strong>Nom:</strong> LAMONNIER Alexis </p>
-            <p><strong>Poste:</strong> Etudiant </p>
-            <p><strong>Expérience:</strong> 1 an </p>
-            <p><strong>Compétences:</strong> HTML, CSS, JavaScript, PHP, Python, Git</p>
-            <p><strong>Contact:</strong> alexis.lamonnier@gmail.com</p>
-        </div>
-        <div class="photos section" style="animation-delay: 1.5s;">
-            <h2>Photos</h2>
-            <img src="photo1.jpg" alt="Photo 1">
-            <img src="photo2.jpg" alt="Photo 2">
-            <img src="photo3.jpg" alt="Photo 3">
-        </div>
-        <div class="category section" style="animation-delay: 2s;">
-            <h2>Passions</h2>
+        <div class="section">
+            <h2>Expérience professionnelle</h2>
             <ul>
-                <li>Informatique</li>
-                <li>Voyages</li>
-                <li>Sport</li>
-                <li>Milieu Militaire</li>
+                <li>Ingénieur en développement web chez XYZ Inc. (2020-2022)</li>
+                <li>Stage en développement logiciel chez ABC Company (2019)</li>
             </ul>
+        </div>
+        <div class="section">
+            <h2>Formation académique</h2>
+            <ul>
+                <li>Master en informatique - Université A (2018-2020)</li>
+                <li>Licence en génie logiciel - Université B (2015-2018)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Compétences techniques</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript (Vue.js, React)</li>
+                <li>PHP (Laravel)</li>
+                <li>Python (Django)</li>
+                <li>Bases de données (MySQL, MongoDB)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Projets personnels</h2>
+            <p>J'ai développé plusieurs applications web open source disponibles sur GitHub, dont un gestionnaire de tâches et un blog personnel.</p>
+        </div>
+        <div class="section">
+            <h2>Contributions open source</h2>
+            <p>Actif sur GitHub, j'ai contribué à divers projets open source, y compris des pull requests et des problèmes signalés.</p>
+        </div>
+        <div class="section">
+            <h2>Références</h2>
+            <p>Références disponibles sur demande.</p>
+        </div>
+        <div class="section">
+            <h2>Langues</h2>
+            <p>Français (langue maternelle), Anglais (courant)</p>
+        </div>
+        <div class="section">
+            <h2>Centres d'intérêt</h2>
+            <p>Photographie, Voyages, Lecture</p>
+        </div>
+        <div class="section">
+            <h2>Informations de contact</h2>
+            <p>Email: exemple@gmail.com</p>
+            <p>Téléphone: +1234567890</p>
+            <p>LinkedIn: linkedin.com/in/exemple</p>
         </div>
     </div>
 </body>
