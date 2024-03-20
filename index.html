@@ -3,147 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #333; /* Couleur de fond sombre */
-            color: #fff; /* Couleur du texte clair */
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container {
-            width: 80%;
-            margin: 50px auto;
-            background-color: #444; /* Couleur de fond plus foncée */
-            border-radius: 10px;
-            padding: 30px;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .section {
-            flex: 1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre initiale */
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            transition: box-shadow 0.3s ease; /* Transition de l'ombre */
-        }
-
-        .section:hover {
-            box-shadow: 0 0 20px rgba(189, 189, 189, 0.7); /* Ombre au survol */
-        }
-
-        h1 {
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: slideInTitle 1s ease forwards, fadeIn 1s ease forwards;
-            animation-delay: 0.5s;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInTitle {
-            from {
-                transform: translateY(-20px);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-    </style>
     <title>CV Git</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js" defer></script> 
 </head>
 <body>
     <div class="container">
         <h1>Mon CV Git</h1>
-        <div class="section">
-            <h2>Profil personnel</h2>
-            <p>Je suis un développeur passionné avec une expertise dans les technologies web modernes.</p>
+
+        <div class="part" id="profile">
+            <h2 class="title-section">Profil personnel</h2>
+            <div class="sections">
+                <div class="section">
+                    <h3>Expérience</h3>
+                    <p>Ingénieur en développement web chez XYZ Inc. (2020-2022)</p>
+                    <p>Stage en développement logiciel chez ABC Company (2019)</p>
+                </div>
+                <div class="section">
+                    <h3>Informations personnelles</h3>
+                    <p>Nom: VotreNom</p>
+                    <p>Prénom: VotrePrénom</p>
+                    <p>Date de naissance: JJ/MM/AAAA</p>
+                    <!-- Ajoutez d'autres informations personnelles selon vos besoins -->
+                </div>
+                <div class="section">
+                    <h3>Compétences</h3>
+                    <ul>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript (Vue.js, React)</li>
+                        <li>PHP (Laravel)</li>
+                        <li>Python (Django)</li>
+                        <li>Bases de données (MySQL, MongoDB)</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="section">
-            <h2>Expérience professionnelle</h2>
-            <ul>
-                <li>Ingénieur en développement web chez XYZ Inc. (2020-2022)</li>
-                <li>Stage en développement logiciel chez ABC Company (2019)</li>
-            </ul>
+
+        <div class="part" id="projects">
+            <h2 class="title-section">Projets personnels</h2>
+            <div class="sections">
+                <div class="section">
+                    <h3>Gestionnaire de tâches</h3>
+                    <p>Application web open source disponible sur GitHub.</p>
+                </div>
+                <div class="section">
+                    <h3>Blog personnel</h3>
+                    <p>Application web open source disponible sur GitHub.</p>
+                </div>
+            </div>
         </div>
-        <div class="section">
-            <h2>Formation académique</h2>
-            <ul>
-                <li>Master en informatique - Université A (2018-2020)</li>
-                <li>Licence en génie logiciel - Université B (2015-2018)</li>
-            </ul>
+
+        <div class="part" id="contributions">
+            <h2 class="title-section">Contributions open source</h2>
+            <div class="sections">
+                <div class="section">
+                    <h3>GitHub</h3>
+                    <p>Actif sur GitHub, contributions à divers projets open source.</p>
+                </div>
+            </div>
         </div>
-        <div class="section">
-            <h2>Compétences techniques</h2>
-            <ul>
-                <li>HTML/CSS</li>
-                <li>JavaScript (Vue.js, React)</li>
-                <li>PHP (Laravel)</li>
-                <li>Python (Django)</li>
-                <li>Bases de données (MySQL, MongoDB)</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>Projets personnels</h2>
-            <p>J'ai développé plusieurs applications web open source disponibles sur GitHub, dont un gestionnaire de tâches et un blog personnel.</p>
-        </div>
-        <div class="section">
-            <h2>Contributions open source</h2>
-            <p>Actif sur GitHub, j'ai contribué à divers projets open source, y compris des pull requests et des problèmes signalés.</p>
-        </div>
-        <div class="section">
-            <h2>Références</h2>
-            <p>Références disponibles sur demande.</p>
-        </div>
-        <div class="section">
-            <h2>Langues</h2>
-            <p>Français (langue maternelle), Anglais (courant)</p>
-        </div>
-        <div class="section">
-            <h2>Centres d'intérêt</h2>
-            <p>Photographie, Voyages, Lecture</p>
-        </div>
-        <div class="section">
-            <h2>Informations de contact</h2>
-            <p>Email: exemple@gmail.com</p>
-            <p>Téléphone: +1234567890</p>
-            <p>LinkedIn: linkedin.com/in/exemple</p>
+
+        <div class="part" id="contact">
+            <h2 class="title-section">Informations de contact</h2>
+            <div class="sections">
+                <div class="section">
+                    <h3>Contact</h3>
+                    <p>Email: exemple@gmail.com</p>
+                    <p>Téléphone: +1234567890</p>
+                    <p>LinkedIn: linkedin.com/in/exemple</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>

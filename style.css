@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #333; /* Couleur de fond sombre */
+    color: #fff; /* Couleur du texte clair */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #444; /* Couleur de fond plus foncée */
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.part {
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.title-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sections {
+    display: flex;
+    justify-content: space-between; /* Ajustement de l'espacement entre les sections */
+    flex-wrap: wrap;
+}
+
+.section {
+    flex-basis: calc(33.33% - 40px); /* Largeur fixe pour chaque section avec marge */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre initiale */
+    transition: box-shadow 0.3s ease; /* Transition de l'ombre */
+    margin-bottom: 20px;
+}
+
+.section:hover {
+    box-shadow: 0 0 20px rgba(189, 189, 189, 0.7); /* Ombre au survol */
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideInTitle 1s ease forwards, fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .section {
+        flex-basis: calc(50% - 40px); /* Ajustement pour les écrans plus petits */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInTitle {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+#projects .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Répartit les sections de manière égale sur la ligne */
+}
+
+#projects .section {
+    flex: 1 0 calc(50% - 20px); /* Le projet peut grandir, mais ne rétrécira pas. La largeur est la moitié moins la marge */
+    margin-bottom: 20px;
+}
+
+#contributions .sections,
+#contact .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Répartit les sections de manière égale sur la ligne */
+}
+
+#contributions .section,
+#contact .section {
+    flex: 1 0 calc(50% - 20px); /* Le projet peut grandir, mais ne rétrécira pas. La largeur est la moitié moins la marge */
+    margin-bottom: 20px;
+}
+
+.section li,
+.section h3,
+.section p {
+    text-align: center;
+}
