@@ -167,3 +167,163 @@ nav ul li a:hover {
         transform: translateY(0);
     }
 }
+.title-section {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow pour les titres */
+}
+
+.sections {
+    display: flex;
+    justify-content: space-between; /* Ajustement de l'espacement entre les sections */
+    flex-wrap: wrap;
+}
+
+
+.section {
+    flex-basis: calc(33.33% - 40px); /* Largeur fixe pour chaque section avec marge */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #555; /* Couleur de fond des sections */
+    transition: background-color 0.3s ease; /* Transition de la couleur de fond */
+    margin-bottom: 20px;
+}
+
+.section:hover {
+    background-color: #666; /* Couleur de fond des sections au survol */
+}
+
+.section h3 {
+    text-align: center; /* Centrer le texte à l'intérieur de la section */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow pour les titres des sections */
+}
+
+.section p {
+    text-align: center; /* Centrer le texte à l'intérieur de la section */
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@600&display=swap');
+
+:root {
+  --btn-size: 2.5rem;
+  --extra-space: 1.2rem;
+}
+
+/* Where the magic happens */
+.item {
+  --radius: calc(var(--btn-size) + var(--extra-space));
+  background-color: var(--bg);
+  transform: translateX(calc(cos(var(--angle)) * var(--radius)))
+             translateY(calc(sin(var(--angle) * -1) * var(--radius)))
+             rotate(0deg);
+  transition: all 0.3s var(--delay) ease;
+}
+
+/* Every item gets a background, angle, and delay */
+
+.item:nth-child(1) {
+  --bg: pink;
+  --angle: 0deg;
+  --delay: 0s;
+}
+
+.item:nth-child(2) {
+  --bg: thistle;
+  --angle: 45deg;
+  --delay: 0.1s;
+}
+
+.item:nth-child(3) {
+  --bg: paleturquoise;
+  --angle: 90deg;
+  --delay: 0.2s;
+}
+
+.item:nth-child(4) {
+  --bg: lightgreen;
+  --angle: 135deg;
+  --delay: 0.3s;
+}
+
+.item:nth-child(5) {
+  --bg: peachpuff;
+  --angle: 180deg;
+  --delay: 0.4s;
+}
+
+.menu:not(:focus-within) .item {
+  --radius: 0;
+  --angle: 0;
+  rotate: 45deg;
+}
+
+/* rotate the "plus" */
+/* .menu-toggle > div {
+  transition: transform 0.3s;
+}
+
+.menu:focus-within .menu-toggle > div {
+  transform: rotate(90deg);
+} */
+
+/* Blah blah */
+
+.item {
+  border-radius: 50%;
+  width: var(--btn-size);
+  aspect-ratio: 1/1;
+}
+
+.menu-toggle {
+  border-radius: 50%;
+  width: var(--btn-size);
+  aspect-ratio: 1/1;
+  background: darksalmon;
+  z-index: 1;
+}
+
+/* Grid piles */
+
+.menu,
+.menu-items,
+body,
+.item {
+  display: grid;
+  place-content: center;
+}
+
+.menu > *,
+.menu-items > *,
+body > *
+.item button {
+  grid-area: 1/1;
+}
+
+/* Resets, etc. */
+/* visually-hidden ala https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+.sr-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: 'Noto Emoji';
+  color: #222;
+  font-size: 1.25rem;
+}
+
+button:focus-visible {
+  outline: 2px dashed deeppink;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+body {
+  height: 100vh;
+}
