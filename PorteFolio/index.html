@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mon Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="HTML/projet.html">Projets</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Bienvenue sur mon Portfolio</h2>
+            <p>Je suis LAMONNIER Alexis , un développeur web passionné par la création d'expériences en ligne captivantes.</p>
+            <a href="projet.html" class="btn">Découvrir mes projets</a>
+        </section>
+
+        <section class="projects">
+            <h2>Mes Projets</h2>
+            <div class="project">
+                <img src="project1.jpg" alt="Projet 1">
+                <h3>Nom du Projet 1</h3>
+                <p>Description du projet 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Projet 2">
+                <h3>Nom du Projet 2</h3>
+                <p>Description du projet 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <!-- Ajoutez d'autres projets selon vos besoins -->
+        </section>
+
+        <section class="about">
+            <h2>À Propos de Moi</h2>
+            <img src="profile.jpg" alt="Photo de profil">
+            <p>Je suis [Votre nom], un développeur web passionné par la création d'interfaces utilisateur interactives et esthétiques. Avec une solide expérience dans le développement front-end et une connaissance approfondie des dernières technologies web, je m'efforce de créer des expériences en ligne uniques et engageantes.</p>
+        </section>
+
+        <section class="contact">
+            <h2>Contactez-Moi</h2>
+            <form action="envoyer_message.php" method="POST">
+                <input type="text" name="nom" placeholder="Votre Nom" required>
+                <input type="email" name="email" placeholder="Votre Email" required>
+                <textarea name="message" placeholder="Votre Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Portfolio</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

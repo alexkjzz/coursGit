@@ -1,0 +1,127 @@
+body {
+margin: 0;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #e7e7e7;
+}
+header {
+text-align: center;
+padding: 20px 0;
+}
+
+img {
+display: block;
+max-width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container-carrousel {
+--widthItem: 150px;
+--heightItem: 100px;
+width: var(--widthItem);
+height: var(--heightItem);
+perspective: 1000px;
+}
+
+.carrousel {
+--rotatey: 0;
+font-size: 4rem;
+position: relative;
+transform: rotatey(var(--rotatey));
+transform-style: preserve-3d;
+user-select: none;
+cursor: grab;
+}
+
+.carrousel-item {
+opacity: 0.5;
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 5px;
+transition: opacity 0.5s;
+}
+
+.carrousel-item:hover {
+opacity: 1;
+}
+
+.carrousel,
+.carrousel-item {
+width: 100%;
+height: 100%;
+}
+
+.carrousel-item:nth-child(1) {
+--rotatey: 0;
+transform: rotatey(var(--rotatey)) translatez(var(--tz));
+background-image: url(https://picsum.photos/600/400?random=1);
+}
+
+.carrousel-item:nth-child(2) {
+--rotatey: 0;
+transform: rotatey(var(--rotatey)) translatez(var(--tz));
+background-image: url(https://picsum.photos/600/400?random=2);
+}
+
+.carrousel-item:nth-child(3) {
+--rotatey: 0;
+transform: rotatey(var(--rotatey)) translatez(var(--tz));
+background-image: url(https://picsum.photos/600/400?random=3);
+}
+.carrousel-item:nth-child(4) {
+--rotatey: 0;
+transform: rotatey(var(--rotatey)) translatez(var(--tz));
+background-image: url(https://picsum.photos/600/400?random=4);
+}
+
+.carrousel-item:nth-child(5) {
+--rotate: 0;
+transform: rotatey(var(--rotatey)) translatez(var(--tz));
+background-image: url(https://picsum.photos/600/400?random=5);
+}
+
+.carrousel-item:nth-child(6) {
+--rotatey: 0;
+transform: rotatey(var(--rotatey)) translatez(var(--tz));
+background-image: url(https://picsum.photos/600/400?random=6);
+}
+
+@media screen and (min-width: 576px) {
+.container-carrousel {
+--widthItem: 250px;
+--heightItem: 200px;
+}
+}
+/* Styles pour le texte descriptif */
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 92%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    transition: opacity 0.3s;
+    opacity: 0; /* Par défaut, le texte est caché */
+    pointer-events: none; /* Permet de ne pas interférer avec les événements de souris */
+    border-radius: 5px; /* Arrondit les coins avec un rayon de 10px */
+    
+}
+
+/* Lorsque vous survolez un élément du carrousel, affichez le texte descriptif */
+.carrousel-item:hover .description {
+    opacity: 1;
+}
+
