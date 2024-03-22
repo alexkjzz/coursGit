@@ -1,3 +1,4 @@
+/* Styles de base */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #333; /* Couleur de fond sombre */
@@ -18,7 +19,7 @@ body {
 .part {
     margin-bottom: 30px;
     opacity: 0;
-    animation: fadeIn 1s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .title-section {
@@ -39,6 +40,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre initiale */
     transition: box-shadow 0.3s ease; /* Transition de l'ombre */
     margin-bottom: 20px;
+    text-align: center; /* Centrer le contenu à l'intérieur de chaque section */
 }
 
 .section:hover {
@@ -201,129 +203,66 @@ nav ul li a:hover {
 .section p {
     text-align: center; /* Centrer le texte à l'intérieur de la section */
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@600&display=swap');
 
-:root {
-  --btn-size: 2.5rem;
-  --extra-space: 1.2rem;
+/* Animation pour le contenu de chaque partie */
+.part {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease forwards;
 }
 
-/* Where the magic happens */
-.item {
-  --radius: calc(var(--btn-size) + var(--extra-space));
-  background-color: var(--bg);
-  transform: translateX(calc(cos(var(--angle)) * var(--radius)))
-             translateY(calc(sin(var(--angle) * -1) * var(--radius)))
-             rotate(0deg);
-  transition: all 0.3s var(--delay) ease;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Every item gets a background, angle, and delay */
-
-.item:nth-child(1) {
-  --bg: pink;
-  --angle: 0deg;
-  --delay: 0s;
+/* Animation pour le titre */
+.title-section {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour le titre */
+    opacity: 0;
+    animation: slideInTitle 1s ease forwards, fadeIn 1s ease forwards;
+    animation-delay: 0.5s; /* Délai avant le début de l'animation */
 }
 
-.item:nth-child(2) {
-  --bg: thistle;
-  --angle: 45deg;
-  --delay: 0.1s;
+@keyframes slideInTitle {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
-.item:nth-child(3) {
-  --bg: paleturquoise;
-  --angle: 90deg;
-  --delay: 0.2s;
+/* Animation pour le menu */
+nav {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center; /* Centrer le texte du menu */
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s; /* Délai avant le début de l'animation */
 }
 
-.item:nth-child(4) {
-  --bg: lightgreen;
-  --angle: 135deg;
-  --delay: 0.3s;
+/* Animation pour les éléments du menu */
+nav ul li {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s; /* Délai avant le début de l'animation */
 }
 
-.item:nth-child(5) {
-  --bg: peachpuff;
-  --angle: 180deg;
-  --delay: 0.4s;
-}
-
-.menu:not(:focus-within) .item {
-  --radius: 0;
-  --angle: 0;
-  rotate: 45deg;
-}
-
-/* rotate the "plus" */
-/* .menu-toggle > div {
-  transition: transform 0.3s;
-}
-
-.menu:focus-within .menu-toggle > div {
-  transform: rotate(90deg);
-} */
-
-/* Blah blah */
-
-.item {
-  border-radius: 50%;
-  width: var(--btn-size);
-  aspect-ratio: 1/1;
-}
-
-.menu-toggle {
-  border-radius: 50%;
-  width: var(--btn-size);
-  aspect-ratio: 1/1;
-  background: darksalmon;
-  z-index: 1;
-}
-
-/* Grid piles */
-
-.menu,
-.menu-items,
-body,
-.item {
-  display: grid;
-  place-content: center;
-}
-
-.menu > *,
-.menu-items > *,
-body > *
-.item button {
-  grid-area: 1/1;
-}
-
-/* Resets, etc. */
-/* visually-hidden ala https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
-.sr-only {
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap; 
-  width: 1px;
-}
-
-button {
-  border: none;
-  background: none;
-  font-family: 'Noto Emoji';
-  color: #222;
-  font-size: 1.25rem;
-}
-
-button:focus-visible {
-  outline: 2px dashed deeppink;
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-}
-
-body {
-  height: 100vh;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
