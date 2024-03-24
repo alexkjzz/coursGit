@@ -1,0 +1,96 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+}
+
+.sidebar {
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    height: 100%; /* Ajustez cette valeur selon vos besoins */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    height: 100%; /* Ajustez cette valeur selon vos besoins */
+    display: flex;
+    flex-direction: column; /* Alignement vertical des éléments */
+    justify-content: center; /* Centrage vertical des éléments */
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}

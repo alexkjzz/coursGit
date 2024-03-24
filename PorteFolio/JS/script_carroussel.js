@@ -3,18 +3,18 @@ const containerCarrousel = container.querySelector(".container-carrousel");
 const carrousel = container.querySelector(".carrousel");
 const carrouselItems = carrousel.querySelectorAll(".carrousel-item");
 
-// Iniciamos variables que cambiaran su estado.
-let isMouseDown = false;
-let currentMousePos = 0;
-let lastMousePos = 0;
-let lastMoveTo = 0;
-let moveTo = 0;
+// Inicialisation des variables qui changeront leur état.
+let isMouseDown = false; // Indique si le bouton de la souris est enfoncé
+let currentMousePos = 0; // Position actuelle de la souris
+let lastMousePos = 0; // Dernière position de la souris
+let lastMoveTo = 0; // Dernière valeur de déplacement
+let moveTo = 0; // Valeur de déplacement actuelle
 
 const createCarrousel = () => {
 const carrouselProps = onResize();
-const length = carrouselItems.length; // Longitud del array
-const degress = 360 / length; // Grados por cada item
-const gap = 20; // Espacio entre cada item
+const length = carrouselItems.length; // Longueur du tableau
+const degress = 360 / length; // Degrés par élément
+const gap = 20; // Espacement entre chaque élément
 const tz = distanceZ(carrouselProps.w, length, gap)
 
 const fov = calculateFov(carrouselProps);
@@ -30,17 +30,17 @@ item.style.setProperty("--tz", tz + "px");
 });
 };
 
-// Funcion que da suavidad a la animacion
+// Fonction qui donne une animation fluide
 const lerp = (a, b, n) => {
 return n * (a - b) + b;
 };
 
 // https://3dtransforms.desandro.com/carousel
 const distanceZ = (widthElement, length, gap) => {
-return (widthElement / 2) / Math.tan(Math.PI / length) + gap; // Distancia Z de los items
+return (widthElement / 2) / Math.tan(Math.PI / length) + gap; // Distance Z des éléments
 }
 
-// Calcula el alto del contenedor usando el campo de vision y la distancia de la perspectiva
+// Calcul de la hauteur du conteneur en utilisant le champ de vision et la distance de la perspective
 const calculateHeight = z => {
 const t = Math.atan(90 * Math.PI / 180 / 2);
 const height = t * 2 * z;
@@ -48,7 +48,7 @@ const height = t * 2 * z;
 return height;
 };
 
-// Calcula el campo de vision del carrousel
+// Calcul du champ de vision du carrousel
 const calculateFov = carrouselProps => {
 const perspective = window
 .getComputedStyle(containerCarrousel)
@@ -61,7 +61,7 @@ const fov = 2 * Math.atan(length / (2 * perspective)) * (180 / Math.PI);
 return fov;
 };
 
-// Obtiene la posicion X y evalua si la posicion es derecha o izquierda
+// Obtient la position X et évalue si la position est à droite ou à gauche
 const getPosX = x => {
 currentMousePos = x;
 
@@ -78,7 +78,7 @@ requestAnimationFrame(update);
 };
 
 const onResize = () => {
-// Obtiene la propiedades del tamaño de carrousel
+// Obtient les propriétés de taille du carrousel
 const boundingCarrousel = containerCarrousel.getBoundingClientRect();
 
 const carrouselProps = {
@@ -90,7 +90,7 @@ return carrouselProps;
 };
 
 const initEvents = () => {
-// Eventos del mouse
+// Événements de la souris
 carrousel.addEventListener("mousedown", () => {
 isMouseDown = true;
 carrousel.style.cursor = "grabbing";
@@ -106,7 +106,7 @@ carrousel.addEventListener(
 e => isMouseDown && getPosX(e.clientX)
 );
 
-// Eventos del touch
+// Événements du toucher
 carrousel.addEventListener("touchstart", () => {
 isMouseDown = true;
 carrousel.style.cursor = "grabbing";
@@ -127,3 +127,4 @@ createCarrousel();
 };
 
 initEvents();
+    

@@ -38,7 +38,6 @@ font-size: 4rem;
 position: relative;
 transform: rotatey(var(--rotatey));
 transform-style: preserve-3d;
-user-select: none;
 cursor: grab;
 }
 
