@@ -111,12 +111,12 @@ background-image: url(https://picsum.photos/600/400?random=6);
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
-    font-size: 14px;
+    font-size: 15px;
     transition: opacity 0.3s;
     opacity: 0; /* Par défaut, le texte est caché */
-    pointer-events: none; /* Permet de ne pas interférer avec les événements de souris */
+    pointer-events:none; /* Permet de ne pas interférer avec les événements de souris */
     border-radius: 5px; /* Arrondit les coins avec un rayon de 10px */
-    
+    user-select: none;
 }
 
 /* Lorsque vous survolez un élément du carrousel, affichez le texte descriptif */

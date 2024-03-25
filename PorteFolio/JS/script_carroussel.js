@@ -3,7 +3,7 @@ const containerCarrousel = container.querySelector(".container-carrousel");
 const carrousel = container.querySelector(".carrousel");
 const carrouselItems = carrousel.querySelectorAll(".carrousel-item");
 
-// Inicialisation des variables qui changeront leur état.
+// Initialisation des variables qui changeront leur état.
 let isMouseDown = false; // Indique si le bouton de la souris est enfoncé
 let currentMousePos = 0; // Position actuelle de la souris
 let lastMousePos = 0; // Dernière position de la souris
